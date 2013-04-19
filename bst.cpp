@@ -58,27 +58,40 @@ void bst::insertNode(bstNode* curRoot, int newData){
 }
 
 void bst::deleteNode(bstNode* root, int toDel){
+	
+	bstNode* temp;
+
 	if(root == NULL)
 		return;
-	else if(root->data < toDel)
+	
+	if(root->data < toDel)
 		deleteNode(root->right, toDel);
 	else if(root->data > toDel)
 		deleteNode(root->left, toDel);
 	else{
 		if(root->right == NULL && root->left == NULL)
 			delete root;
-		else if(root->right != NULL)
-			root = root->right
+		else if(root->right != NULL){
+			root = root->right;
+			
+		}
 		else if(root->left != NULL)
 			root = root->left;
 		else{
-			//finish this!!!! the case where there's two children!
+			bstNode* successor = root->left;
 		}
 
 	}
-	
-
 }
+
+bstNode* bst::findMin(bstNode* root){
+	bstNode* tempNode = root;
+	while(tempNode->left != NULL)
+		tempNode = tempNode->left;
+
+	return tempNode;
+}
+
 bstNode* bst::search(bstNode* root, int data){
 	if(root->data == data)
 		return root;

@@ -20,6 +20,7 @@ public:
 	bstNode* getRoot();
 	void insertNode(bstNode* curRoot, int newData);
 	void deleteNode(bstNode* root, int toDel);
+	bstNode* findMin(bstNode* root);
 	bstNode* search(bstNode* root, int data);
 	void preOrderTrav(bstNode* root);
 	void postOrderTrav(bstNode* root);
