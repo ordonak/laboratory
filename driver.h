@@ -8,13 +8,15 @@ using namespace std;
 
 class driver{
 	private:
-		enum menuEnum{LL = 1, BST = 2, QUIT = 3};
+		enum menuEnum{LL = 1, BST, STK, QUIT};
 	
 	public:
 		driver();
 		void driverMenu();
 		void linkedListRun();
 		void bstRun();
+		void stackRun();
+		void queueRun();
 };
 
 #endif
